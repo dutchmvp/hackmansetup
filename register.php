@@ -1,14 +1,16 @@
 <div id="registerWrapper">
 
-	Howdy
+	<h1 class="sprite" id="logo"></h1>
+
+	<h2>Hello you how are you</h2>
 	
 	<form method="post" action="signup.php">
 		
 		
-	    <input type="text" placeholder="Your Nickname" name="nickname"/>	
-		<input type="text" placeholder="Your number" name="phone"/>	
-		<input type="email" placeholder="Email Address" name="email"/>
-		<input type="password" placeholder="Password" name="password"/>
+	    <div class="textInput"><input type="text" placeholder="Your Nickname" name="nickname" class="textInput"/>	</div>
+		<input type="text" placeholder="Your number" name="phone" class="textInput"/>	
+		<input type="email" placeholder="Email Address" name="email" class="textInput"/>
+		<input type="password" placeholder="Password" name="password" class="textInput"/>
 		<input type="submit" value="Notify!">
 	
 	</form>

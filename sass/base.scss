@@ -4,6 +4,19 @@ body{
 	background: #000 url('../img/bg.jpg') no-repeat;
 
 }
+
+@font-face {
+    font-family: 'Hell';
+    src: url('../fonts/helveticaneue-webfont.eot');
+    src: url('../fonts/helveticaneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneue-webfont.woff') format('woff'),
+         url('../fonts/helveticaneue-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneue-webfont.svg#helveticaneuethin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #wrapper{
 	width:1200px;
 	margin:0 auto;
@@ -19,5 +32,32 @@ footer{
     }
 }
 
+
+
+.sprite{background:url('../img/sprite.png') 0 0 no-repeat; display:block; width:0px; height:0px;}
+
+#logo {
+	background-position: 0px 0px; width:207px; height:202px; margin:auto;
+	}s
+
+#registerHeader {
+	background-position: 0px 0px; width:207px; height:202px; margin:auto;
+	}
+
+h2{
+	 font-family: 'Hell';
+	 size: 26px;
+	 color: #fff;
+	 margin:auto;
+}
+
+#textInput{
+    background-image:url('../img/formBg.png');
+    background-repeat:no-repeat;
+    border:none;
+    width:296px;
+    height:62px;
+}
 @import 'register.scss';
 @import 'profile.scss';
+

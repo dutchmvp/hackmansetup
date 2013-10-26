@@ -22,7 +22,7 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-$con=mysqli_connect("109.109.137.143","root-bogus","uA8GTi23xD","tfu");
+$con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -31,7 +31,7 @@ if (mysqli_connect_errno())
 	try
 	{
 	    $url = 'https://api.clockworksms.com/http/send.aspx';
-			$myvars = 'KEY=' . 'ad8684f58a1beb7266576cfeb45f5b622dbd4aa1' . '&to=' . '447446022999' . '&content=' . $errorMessage;
+		$myvars = 'KEY=' . 'ad8684f58a1beb7266576cfeb45f5b622dbd4aa1' . '&to=' . '447446022999' . '&content=' . $errorMessage;
 
 		$ch = curl_init( $url );
 		curl_setopt( $ch, CURLOPT_POST, 1);
@@ -47,29 +47,43 @@ if (mysqli_connect_errno())
 	    echo 'Exception sending SMS: ' . $e->getMessage();
 	}
   }
+  
+$foundUser = false;
 
 $resultUser = mysqli_query($con,"SELECT * FROM Users WHERE PhoneNumber='$fromNumber'");
 
 while ($rowUser = mysqli_fetch_array($resultUser))
   {
+  	$foundUser = true;
   	$userId = $rowUser["UserID"];
   	$nickname = $rowUser["Nickname"];
+  	
+  	$foundHandle = false;
   	
   	$result = mysqli_query($con, "SELECT * FROM Contacts WHERE UserID = '$userId' AND Handle='$handle'");
 
 	while($row = mysqli_fetch_array($result))
 	  {
+	  	$foundHandle = true;
 	    $emailAddress = $row["EmailAddress"];
 	    $twitter = $row["twitter"];
+	    $phone = $row["phone"];
 	    mysqli_query(
 	    	$con,
 	    	"INSERT INTO RecipeTriggers " .
-	    	"(Nickname, MessageText, EmailAddress, twitter) " .
+	    	"(Nickname, MessageText, EmailAddress, twitter, phone) " .
 	    	"VALUES " .
-	    	"('$nickname', '$messageBody', '$emailAddress', '$twitter')");
+	    	"('$nickname', '$messageBody', '$emailAddress', '$twitter', '$phone')");
+	  }
+	  
+	  if (!foundHandle) {
+	// TODO - send sms back with error - need to add the handle to list of contacts or check spelling of handle
 	  }
   }
 
+if (!$foundUser) {
+	// TODO - send sms back with error - need to register to use this service
+}
 
 mysqli_close($con);
 ?>
