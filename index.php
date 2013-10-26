@@ -7,7 +7,7 @@ if($_SESSION['logged']){
 ?>
 
 <?php include 'header.php'; ?>
-<?php include 'loginPage.php'; ?>
+<?php include 'register.php'; ?>
 <?php include 'footer.php'; ?>
 
 
