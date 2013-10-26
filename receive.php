@@ -15,7 +15,7 @@ if (mysqli_connect_errno())
   }
 
 mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ('John', 'Hi I am John','hi@mattp.me')");
+VALUES ($_GET["from"], $_GET["content"], 'hi@mattp.me')");
 
 mysqli_close($con);
 ?>
