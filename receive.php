@@ -25,7 +25,6 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-  
 
 $result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='$handle'");
 
@@ -34,13 +33,16 @@ while($row = mysqli_fetch_array($result))
   echo "<br><p>Echo of fetch</p>";
   echo $row['EmailAddress'] . " " . $row['UserID'];
   echo "<br>";
+  
+  if ($row["EmailAddress"] === NULL) {
+  }
+  else {
+    $emailAddress = $row["EmailAddress"];
+    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ('$fromNumber', '$messageBody', '$emailAddress')");
+  }
+  
   }
 
-$thing = "Handle: " . $handle . "; MessageBody: " . $messageBody;
-echo $thing . '\n';
-
-mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ('$fromNumber', '$thing', '$emailAddress')");
 
 mysqli_close($con);
 ?>
