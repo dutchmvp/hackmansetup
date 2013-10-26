@@ -26,22 +26,31 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='$handle'");
+$resultUser = mysqli_query($con,"SELECT * FROM Users WHERE PhoneNumber='$fromNumber'");
 
-while($row = mysqli_fetch_array($result))
+while ($rowUser = mysqli_fetch_array($resultUser))
   {
-  echo "<br><p>Echo of fetch</p>";
-  echo $row['EmailAddress'] . " " . $row['UserID'];
-  echo "<br>";
-  
-  if ($row["EmailAddress"] === NULL) {
+  	$userId = $rowUser["UserID"];
+  	$nickname = $rowUser["Nickname"];
+  	
+  	$result = mysqli_query($con, "SELECT * FROM Contacts WHERE UserID = '$userId' AND Handle='$handle'");
+
+	while($row = mysqli_fetch_array($result))
+	  {
+		  echo "<br><p>Echo of fetch</p>";
+		  echo $row['EmailAddress'] . " " . $row['UserID'];
+		  echo "<br>";
+		  
+		  if ($row["EmailAddress"] === NULL) {
+		  }
+		  else {
+		    $emailAddress = $row["EmailAddress"];
+		    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ('$nickname', '$messageBody', '$emailAddress')");
+		  }
+	  }
   }
-  else {
-    $emailAddress = $row["EmailAddress"];
-    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ('$fromNumber', '$messageBody', '$emailAddress')");
-  }
-  
-  }
+
+
 
 
 mysqli_close($con);
