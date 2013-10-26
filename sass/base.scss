@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Hack Manchester 2013 Setup</title>
-	</head>
-	<body>
-		<h1>This is a placeholder page</h1>
-		<h2>for our dev environment</h2>
-		<p>update v0.3</p>
-	</body
-</html>
+body{
+	width:100%;
+	height:100%;
+	background:#274a5c;
+}
+#wrapper{
+	width:1200px;
+	margin:0 auto;
+}
+
+footer{
+	width:100%;
+	height:200px;
+	#footerContent{
+		width:1200px;
+		margin:0 auto;
+    }
+}
+
+@import 'register.scss';

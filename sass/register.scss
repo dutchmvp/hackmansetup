@@ -1,0 +1,15 @@
+#registerWrapper{
+	width:370px;
+	margin:0 auto;
+	input[type="text"],input[type="email"],input[type="password"]{
+		float:left;
+		width:350px;
+		margin:10px 0 0 0;
+	}
+	input[type="submit"]{
+		width:100px;
+		color:fff;
+		background:orange;
+		margin: 10px 0 0 120px;
+	}
+}
