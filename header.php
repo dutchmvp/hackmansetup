@@ -1,10 +1,4 @@
-<?php 
-session_start(); 
-//if($_SESSION['loggedin']){ 
-//    header("Location: profile.php"); 
-//    exit; 
-//} 
-?>
+
 <!doctype html> 
 <html>
 <head>
@@ -14,4 +8,5 @@ session_start();
 	<link rel="stylesheet" href="css/base.css" />
 </head>
 <body>
+<header></header>
 <div id="wrapper">
