@@ -31,7 +31,7 @@ if (mysqli_connect_errno())
 	try
 	{
 	    $url = 'https://api.clockworksms.com/http/send.aspx';
-			$myvars = 'KEY=' . 'ad8684f58a1beb7266576cfeb45f5b622dbd4aa1' . '&to=' . '447446022999' . '&content=' . '$errorMessage';
+			$myvars = 'KEY=' . 'ad8684f58a1beb7266576cfeb45f5b622dbd4aa1' . '&to=' . '447446022999' . '&content=' . $errorMessage;
 
 		$ch = curl_init( $url );
 		curl_setopt( $ch, CURLOPT_POST, 1);
