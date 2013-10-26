@@ -1,13 +1,16 @@
 <html>
 <body>
 
+<?php
+
+?>
+
 Phone To: <?php echo $_GET["to"]; ?><br>
 Phone From: <?php echo $_GET["from"]; ?><br>
 Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
 
 <?php
-require 'class-Clockwork.php';
 
 $API_KEY = "ad8684f58a1beb7266576cfeb45f5b622dbd4aa1";
  
@@ -19,7 +22,7 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-$con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
+$con=mysqli_connect("109.109.137.143","root-bogus","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -27,9 +30,17 @@ if (mysqli_connect_errno())
 	  echo $errorMessage;
 	try
 	{
-	    $clockwork = new Clockwork($API_KEY);
-	    $message = array("to" => "$fromNumber", "message" => "$errorMessage");
-	    $result = $clockwork->send($message);
+	    $url = 'https://api.clockworksms.com/http/send.aspx';
+			$myvars = 'KEY=' . 'ad8684f58a1beb7266576cfeb45f5b622dbd4aa1' . '&to=' . '447446022999' . '&content=' . $errorMessage;
+
+		$ch = curl_init( $url );
+		curl_setopt( $ch, CURLOPT_POST, 1);
+		curl_setopt( $ch, CURLOPT_POSTFIELDS, $myvars);
+		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt( $ch, CURLOPT_HEADER, 0);
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+		$response = curl_exec( $ch );
 	}
 	catch (ClockworkException $e)
 	{
