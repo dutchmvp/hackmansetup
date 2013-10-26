@@ -9,8 +9,12 @@ Msg ID: <?php echo $_GET["msg_id"]; ?><br>
 <?php
 
 $fromNumber = $_GET["from"];
-$messageText = $_GET["content"];
+$content = $_GET["content"];
 $emailAddress = 'hi@mattp.me';
+
+$pos = strpos($content, " ");
+$handle = substr($content, 0, $pos);
+$messageBody = substr($content, $pos + 1);
 
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
@@ -18,9 +22,12 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
+  
+  
+$thing = "Handle: " + $handle + "; MessageBody: " + $messageBody + ";";
 
 mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ('$fromNumber', '$messageText','$emailAddress')");
+VALUES ('$fromNumber', '$thing', '$emailAddress')");
 
 mysqli_close($con);
 ?>
