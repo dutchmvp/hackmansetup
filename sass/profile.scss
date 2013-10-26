@@ -1,0 +1,45 @@
+#profileWrapper{
+
+	width:950px;
+	height:auto;
+	#navigation{
+		ul{
+			margin:0;
+			padding:0;
+
+			li{
+				float:left;
+				height:175px;
+				width:175px;
+				background:#2c5a72;
+				list-style:none;
+				margin-left:5px;
+			}
+			li:first-child{
+				margin-left:0;
+			}
+			.active{
+				background:#ea5755;
+			}
+		}
+	}
+	#profileContent{
+		width:950px;
+		height:400px;
+		background:#2c5a72;
+		float:left;
+
+        .content{display:none;}
+
+		#profile{
+			display:block;
+		}
+		#createContact{
+			.contactElem{
+				width:400px;
+				float:left;border:1px solid #fff;
+			}
+		}
+		#createContact{}
+	}
+}
