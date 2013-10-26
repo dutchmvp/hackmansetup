@@ -7,6 +7,11 @@ Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
 
 <?php
+
+$fromNumber = $_GET["from"];
+$messageText = $_GET["content"];
+$emailAddress = 'hi@mattp.me';
+
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
@@ -15,7 +20,7 @@ if (mysqli_connect_errno())
   }
 
 mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ('John', 'Hi I am John','hi@mattp.me')");
+VALUES ('$fromNumber', '$messageText','$emailAddress')");
 
 mysqli_close($con);
 ?>
