@@ -18,8 +18,7 @@ $result = $clockwork->send($message);
 */
 
 require "class-Sms.php";
-//$sms = new Sms();
-$sms = new Sms;
+$sms = new Sms();
 $sms->send("447546372748", "Test message from send()");
 
 ?>
