@@ -1,4 +1,6 @@
 <div id="registerWrapper">
+
+	Howdy
 	
 	<form method="post" action="signup.php">
 		
@@ -8,6 +10,7 @@
 		<input type="email" placeholder="Email Address" name="email"/>
 		<input type="password" placeholder="Password" name="password"/>
 		<input type="submit" value="Notify!">
+	
 	</form>
 
 </div>
