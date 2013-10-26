@@ -14,8 +14,11 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ($_GET["from"], $_GET["content"], 'hi@mattp.me')");
+$nickname = $_GET["from"];
+$messageText = $_GET["content"];
+$emailAddress = "hi@mattp.me";
+
+mysqli_query($con, "INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ($nickname, $messageText, $emailAddress)");
 
 mysqli_close($con);
 ?>
