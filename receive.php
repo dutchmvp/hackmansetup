@@ -19,7 +19,7 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-$con=mysqli_connect("109.109.137.143","root-bogus","uA8GTi23xD","tfu");
+$con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
   {
