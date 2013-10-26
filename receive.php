@@ -16,9 +16,6 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-echo $handle . '\n';
-echo $messageBody . '\n';
-
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
@@ -37,21 +34,16 @@ while ($rowUser = mysqli_fetch_array($resultUser))
 
 	while($row = mysqli_fetch_array($result))
 	  {
-		  echo "<br><p>Echo of fetch</p>";
-		  echo $row['EmailAddress'] . " " . $row['UserID'];
-		  echo "<br>";
-		  
-		  if ($row["EmailAddress"] === NULL) {
-		  }
-		  else {
-		    $emailAddress = $row["EmailAddress"];
-		    $twitter = $row["twitter"];
-		    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress, twitter) VALUES ('$nickname', '$messageBody', '$emailAddress', '$twitter')");
-		  }
+	    $emailAddress = $row["EmailAddress"];
+	    $twitter = $row["twitter"];
+	    mysqli_query(
+	    	$con,
+	    	"INSERT INTO RecipeTriggers " .
+	    	"(Nickname, MessageText, EmailAddress, twitter) " .
+	    	"VALUES " .
+	    	"('$nickname', '$messageBody', '$emailAddress', '$twitter')");
 	  }
   }
-
-
 
 
 mysqli_close($con);
