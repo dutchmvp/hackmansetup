@@ -45,7 +45,8 @@ while ($rowUser = mysqli_fetch_array($resultUser))
 		  }
 		  else {
 		    $emailAddress = $row["EmailAddress"];
-		    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ('$nickname', '$messageBody', '$emailAddress')");
+		    $twitter = $row["twitter"];
+		    mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress, twitter) VALUES ('$nickname', '$messageBody', '$emailAddress', '$twitter')");
 		  }
 	  }
   }
