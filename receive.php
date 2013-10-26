@@ -16,8 +16,8 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-echo $handle;
-echo $messageBody;
+echo $handle . '\n';
+echo $messageBody . '\n';
 
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
@@ -27,8 +27,8 @@ if (mysqli_connect_errno())
   }
   
   
-$thing = "Handle: " + $handle + "; MessageBody: " + $messageBody + ";";
-echo $thing;
+$thing = "Handle: " . $handle . "; MessageBody: " . $messageBody;
+echo $thing . '\n';
 
 mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
 VALUES ('$fromNumber', '$thing', '$emailAddress')");
