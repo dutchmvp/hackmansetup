@@ -31,7 +31,7 @@ $result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='$handle'");
 
 while($row = mysqli_fetch_array($result))
   {
-  echo "<br><p>Echo of fetch</p>"
+  echo "<br><p>Echo of fetch</p>";
   echo $row['EmailAddress'] . " " . $row['UserID'];
   echo "<br>";
   }
