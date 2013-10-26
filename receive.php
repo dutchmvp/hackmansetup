@@ -26,7 +26,15 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-  
+
+$result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='$handle'");
+
+while($row = mysqli_fetch_array($result))
+  {
+  echo $row['EmailAddress'] . " " . $row['UserID'];
+  echo "<br>";
+  }
+
 $thing = "Handle: " . $handle . "; MessageBody: " . $messageBody;
 echo $thing . '\n';
 
