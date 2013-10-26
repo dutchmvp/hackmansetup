@@ -27,10 +27,11 @@ if (mysqli_connect_errno())
   }
   
 
-$result = mysqli_query($con,"SELECT * FROM Contacts");
+$result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='$handle'");
 
 while($row = mysqli_fetch_array($result))
   {
+  echo "<br><p>Echo of fetch</p>"
   echo $row['EmailAddress'] . " " . $row['UserID'];
   echo "<br>";
   }
