@@ -16,22 +16,35 @@ $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
 $messageBody = substr($content, $pos + 1);
 
-echo $handle . '\n';
-echo $messageBody . '\n';
-
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
 // Check connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-  
-  
-$thing = "Handle: " . $handle . "; MessageBody: " . $messageBody;
-echo $thing . '\n';
 
-mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
-VALUES ('$fromNumber', '$thing', '$emailAddress')");
+$resultUser = mysqli_query($con,"SELECT * FROM Users WHERE PhoneNumber='$fromNumber'");
+
+while ($rowUser = mysqli_fetch_array($resultUser))
+  {
+  	$userId = $rowUser["UserID"];
+  	$nickname = $rowUser["Nickname"];
+  	
+  	$result = mysqli_query($con, "SELECT * FROM Contacts WHERE UserID = '$userId' AND Handle='$handle'");
+
+	while($row = mysqli_fetch_array($result))
+	  {
+	    $emailAddress = $row["EmailAddress"];
+	    $twitter = $row["twitter"];
+	    mysqli_query(
+	    	$con,
+	    	"INSERT INTO RecipeTriggers " .
+	    	"(Nickname, MessageText, EmailAddress, twitter) " .
+	    	"VALUES " .
+	    	"('$nickname', '$messageBody', '$emailAddress', '$twitter')");
+	  }
+  }
+
 
 mysqli_close($con);
 ?>
