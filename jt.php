@@ -5,7 +5,9 @@
 <h1>My first PHP page</h1>
 
 <?php
-echo "Hello World!";
+require "jt2.php";
+require "class-Clockwork.php";
+echo $jtMessage;
 ?>
 
 </body>
