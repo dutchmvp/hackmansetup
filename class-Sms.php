@@ -21,7 +21,7 @@ class Sms {
 		echo "Making array" . "<br/>";
 		$sms = array("from" => "TFU", "to" => "$to", "message" => "$message");
 
-		echo "$api->send" . "<br/>";
+		echo "api send" . "<br/>";
 		$result = $api->send($sms);
 	}
 }

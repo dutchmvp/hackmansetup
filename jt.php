@@ -23,9 +23,9 @@ echo "Doing new Sms()" . "<br/>";
 $sms = new Sms();
 echo "After new Sms()" . "<br/>";
 
-echo "Doing $sms->send" . "<br/>";
-$sms->send("447546372748", "Test message from $sms.send()");
-echo "After $sms->send" . "<br/>";
+echo "Doing sms send" . "<br/>";
+$sms->send("447546372748", "Test message from send()");
+echo "After sms send" . "<br/>";
 
 ?>
 
