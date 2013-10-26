@@ -18,4 +18,14 @@ footer{
     }
 }
 
+.sprite{background:url('../img/sprite.png') 0 0 no-repeat; display:block; width:0px; height:0px;}
+
+#logo {
+	background-position: 0px 0px; width:207px; height:202px; margin:auto;
+	}
+
+#registerHeader {
+	background-position: 0px 0px; width:207px; height:202px; margin:auto;
+	}
+
 @import 'register.scss';

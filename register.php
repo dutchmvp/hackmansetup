@@ -1,6 +1,7 @@
 <div id="registerWrapper">
 
-	Howdy
+	<h1 class="sprite" id="logo"></h1>
+	<h2 class="sprite" id="registerHeader"></h2>
 	
 	<form method="post" action="signup.php">
 		

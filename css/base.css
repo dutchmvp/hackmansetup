@@ -14,9 +14,27 @@ footer {
     width: 1200px;
     margin: 0 auto; }
 
+.sprite {
+  background: url("../img/sprite.png") 0 0 no-repeat;
+  display: block;
+  width: 0px;
+  height: 0px; }
+
+#logo {
+  background-position: 0px 0px;
+  width: 207px;
+  height: 202px;
+  margin: auto; }
+
+#registerHeader {
+  background-position: 0px 0px;
+  width: 207px;
+  height: 202px;
+  margin: auto; }
+
 #registerWrapper {
   width: 370px;
-  margin: 200px auto; }
+  margin: 120px auto; }
   #registerWrapper input[type="text"], #registerWrapper input[type="email"], #registerWrapper input[type="password"] {
     float: left;
     width: 350px;
