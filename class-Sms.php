@@ -11,10 +11,10 @@ class Sms {
 	}
 
 	public function send($to, $message) {
-		//$api = new Clockwork(self::API_KEY);
-		//$sms = array("from" => self::FROM, "to" => $to, "message" => $message);
-		$api = new Clockwork("ad8684f58a1beb7266576cfeb45f5b622dbd4aa1");
-		$sms = array("from" => "TFU", "to" => "$to", "message" => "$message");
+		$api = new Clockwork(self::API_KEY);
+		$sms = array("from" => self::FROM, "to" => $to, "message" => $message);
+		//$api = new Clockwork("ad8684f58a1beb7266576cfeb45f5b622dbd4aa1");
+		//$sms = array("from" => "TFU", "to" => "$to", "message" => "$message");
 		$result = $api->send($sms);
 	}
 }
