@@ -1,14 +1,10 @@
 <html>
 <body>
 
-<?php ini_set("display_errors", "On"); ?>
-
 Phone To: <?php echo $_GET["to"]; ?><br>
 Phone From: <?php echo $_GET["from"]; ?><br>
 Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
-
-
 
 <?php
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
@@ -18,8 +14,9 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
+mysqli_query($con,"INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress)
+VALUES ('John', 'Hi I am John','hi@mattp.me')");
 
-mysqli_query($con, "INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ('012345, 'test', 'hi@mattp.me)");
 mysqli_close($con);
 ?>
 
