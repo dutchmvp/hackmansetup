@@ -1,10 +1,12 @@
 <html>
 <body>
 
+<!--
 Phone To: <?php echo $_GET["to"]; ?><br>
 Phone From: <?php echo $_GET["from"]; ?><br>
 Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
+-->
 
 <?php
 
@@ -13,12 +15,13 @@ $sms = new Sms();
 
 $fromNumber = $_GET["from"];
 $content = $_GET["content"];
-$emailAddress = 'hi@mattp.me';
+//$emailAddress = 'hi@mattp.me';
 
 $pos = strpos($content, " ");
 $handle = substr($content, 0, $pos);
-$messageBody = substr($content, $pos + 1);
+$messageText = substr($content, $pos + 1);
 
+/*
 $con = mysqli_connect("109.109.137.143", "root", "uA8GTi23xD", "tfu");
 
 if (mysqli_connect_errno())
@@ -66,11 +69,30 @@ if (!$foundUser) {
 }
 
 mysqli_close($con);
+*/
+
+require "database.php";
+$database = new Database();
+$userRow = $database->lookupPhoneNumber($fromNumber);
+if (!is_null($userRow)) {
+	$contactRow = $database->lookupHandle($userRow, $handle);
+	if (!is_null($contactRow)) {
+		$database->createRecipeTrigger($userRow, $contactRow, $messageText);
+	}
+	else {
+		$sms->send($fromNumber, "We failed to find handle '" . $handle . "' in your list of contacts.");
+	}
+}
+else {
+	$sms->send($fromNumber, "We failed to find a registered user with your mobile phone number.");
+}
+
 ?>
 
+<!--
 <p>http://hackman.j.layershift.co.uk/receive.php?to=447860033014&from=441234567890&content=Hello+World&msg_id=AB_12345</p>
-
 <p>Version 0.2</p>
+-->
 
 </body>
 </html>
