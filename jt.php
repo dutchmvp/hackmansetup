@@ -6,6 +6,7 @@
 
 <?php
 require "jt2.php";
+require "class-Clockwork.php";
 echo $jtMessage;
 ?>
 
