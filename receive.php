@@ -7,7 +7,7 @@ Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
 
 <?php
-//require 'class-Clockwork.php';
+require 'class-Clockwork.php';
 
 $API_KEY = "ad8684f58a1beb7266576cfeb45f5b622dbd4aa1";
  
