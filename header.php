@@ -1,10 +1,4 @@
-<?php 
-session_start(); 
-//if($_SESSION['loggedin']){ 
-//    header("Location: profile.php"); 
-//    exit; 
-//} 
-?>
+
 <!doctype html> 
 <html>
 <head>
