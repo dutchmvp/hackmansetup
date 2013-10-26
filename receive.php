@@ -8,26 +8,7 @@ Phone From: <?php echo $_GET["from"]; ?><br>
 Phone From: <?php echo $_GET["content"]; ?><br>
 Msg ID: <?php echo $_GET["msg_id"]; ?><br>
 
-<?php
-$nickname = $_GET["from"];
-$messageText = $_GET["content"];
-$emailAddress = "hi@mattp.me";
 
-echo $nickname;
-echo $messageText;
-echo $emailAddress;
-
-$con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-mysqli_query($con, "INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ($nickname, $messageText, $emailAddress)");
-
-mysqli_close($con);
-?>
 
 <?php
 $con=mysqli_connect("109.109.137.143","root","uA8GTi23xD","tfu");
