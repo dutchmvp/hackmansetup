@@ -1,6 +1,8 @@
 <html>
 <body>
 
+<?php ini_set("display_errors", "On"); ?>
+
 Phone To: <?php echo $_GET["to"]; ?><br>
 Phone From: <?php echo $_GET["from"]; ?><br>
 Phone From: <?php echo $_GET["content"]; ?><br>
@@ -17,6 +19,10 @@ if (mysqli_connect_errno())
 $nickname = $_GET["from"];
 $messageText = $_GET["content"];
 $emailAddress = "hi@mattp.me";
+
+echo $nickname;
+echo $messageText;
+echo $emailAddress;
 
 mysqli_query($con, "INSERT INTO RecipeTriggers (Nickname, MessageText, EmailAddress) VALUES ($nickname, $messageText, $emailAddress)");
 
