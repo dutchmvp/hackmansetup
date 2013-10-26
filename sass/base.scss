@@ -20,6 +20,7 @@ body{
 #wrapper{
 	width:1200px;
 	margin:0 auto;
+	clear:both;
 }
 
 footer{
@@ -30,6 +31,8 @@ footer{
 		margin:0 auto;
     }
 }
+
+
 
 .sprite{background:url('../img/sprite.png') 0 0 no-repeat; display:block; width:0px; height:0px;}
 
@@ -55,5 +58,6 @@ h2{
     width:296px;
     height:62px;
 }
-
 @import 'register.scss';
+@import 'profile.scss';
+
