@@ -27,7 +27,7 @@ if (mysqli_connect_errno())
   }
   
 
-$result = mysqli_query($con,"SELECT * FROM Contacts WHERE Handle='@wife'");
+$result = mysqli_query($con,"SELECT * FROM Contacts");
 
 while($row = mysqli_fetch_array($result))
   {
