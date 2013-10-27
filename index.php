@@ -1,7 +1,10 @@
 <?php
 session_start();
-if (!is_null($_SESSION['userid'])) {
-	header ("Location: profile.php");
+if (isset($_SESSION['userid'])) {
+	$userId = $_SESSION['userid'];
+	if (!is_null($userId)) {
+		header ("Location: profile.php");
+	}
 }
 ?>
 
