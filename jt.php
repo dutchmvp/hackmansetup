@@ -2,22 +2,30 @@
 <html>
 <body>
 
+<h1>My first PHP page</h1>
+
 <?php
+
+require "jt2.php";
+echo $jtMessage;
+
 /*
-require "class-Sms.php";
-$sms = new Sms();
-$sms->send("447546372748", "Test message from send()");
+require "class-Clockwork.php";
+$key = "ad8684f58a1beb7266576cfeb45f5b622dbd4aa1";
+$clockwork = new Clockwork($key);
+$message = array("to" => "447546372748", "message" => "Test message");
+$result = $clockwork->send($message);
 */
 
-require "database.php";
-$database = new Database();
-$userRow = $database->lookupPhoneNumber("447546372748");
-if (!is_null($userRow)) {
-	$contactRow = $database->lookupHandle($userRow, "@dog");
-	if (!is_null($contactRow)) {
-		$database->createRecipeTrigger($userRow, $contactRow, "This is a test message (1)");
-	}
-}
+require "class-Sms.php";
+
+echo "Doing new Sms()" . "<br/>"
+$sms = new Sms();
+echo "After new Sms()" . "<br/>"
+
+echo "Doing $sms->send" . "<br/>"
+$sms->send("447546372748", "Test message from $sms.send()");
+echo "After $sms->send" . "<br/>"
 
 ?>
 

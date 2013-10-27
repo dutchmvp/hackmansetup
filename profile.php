@@ -1,15 +1,4 @@
 
-<?php
-
-// Inialize session
-session_start();
-
-// Check, if username session is NOT set then this page will jump to login page
-if (!isset($_SESSION['username'])) {
-header('Location: index.php');
-}
-
-?>
 <?php include 'header.php'; ?>
 
 
@@ -27,6 +16,7 @@ header('Location: index.php');
 		<div id="contacts" class="content">
 			<?php 
 			   include 'database.php';
+
 			   $user = '4';
 			   $query="SELECT * FROM Contacts WHERE UserId = $user";
 			   $results = mysql_query($query);
@@ -61,12 +51,6 @@ header('Location: index.php');
 				<span class="icon"></span>
                 <div class="inputHolder">
                 	<input type="text"placeholder="Email" id="email" />
-                </div>
-			</div>
-			<div id="" class="contactElem">
-				<span class="icon"></span>
-                <div class="inputHolder">
-                	<input type="text"placeholder="twitter" id="twitter" />
                 </div>
 			</div>
 			<a href="#" id="createContactButton">Create Contact</a>
