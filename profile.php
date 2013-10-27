@@ -1,7 +1,19 @@
 <?PHP
 session_start();
+
+/*
 if (!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] != '')) {
 header ("Location: index.php");
+}
+*/
+
+if (!isset($_SESSION['userid'])) {
+	header ("Location: index.php");
+}
+
+$userId = $_SESSION['userid'];
+if (is_null($userId)) {
+	header ("Location: index.php");
 }
 
 ?>
