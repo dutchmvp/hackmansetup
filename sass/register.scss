@@ -1,16 +1,31 @@
 #registerWrapper{
 	width:370px;
 	margin:120px auto;
+	
+
+	
 	input[type="text"],input[type="email"],input[type="password"]{
-		float:left;
-		width:350px;
-		margin:10px 0 0 0;
+		float: left;
+		width: 350px;
+		height: 40px;
+		margin: 10px 0 0 0;
+		background-color: rgba(61,121,151, 0.6);
+		border: none;
+		padding: 5px 10px;
+		font-size: 16px;
 	}
 	input[type="submit"]{
 		width:100px;
-		color:fff;
-		background:orange;
-		margin: 30px 0 50px 120px;
+		height: 40px;
+		border: none;
+		background-color: rgba(234, 87, 85, 0.6);
+		margin: 10px 0 50px 120px;
 
 	}
+}
+
+.rightShift {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
 }

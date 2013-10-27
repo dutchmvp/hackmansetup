@@ -12,7 +12,9 @@
 		<input type="text" placeholder="Your number" name="phone" class="textInput"/>	
 		<input type="email" placeholder="Email Address" name="email" class="textInput"/>
 		<input type="password" placeholder="Password" name="password" class="textInput"/>
-		<input type="submit" value="Notify!">
+		<span class="rightShift">
+			<input type="submit" value="Notify!">
+		</span>
 	
 	</form>
 
