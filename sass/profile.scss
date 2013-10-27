@@ -36,10 +36,37 @@
 		}
 		#createContact{
 			.contactElem{
-				width:400px;
-				float:left;border:1px solid #fff;
+				width:100%;
+				float:left;
+				
+				input {
+					width: 400px;
+					height: 30px;
+					padding: 5px 10px;
+					margin-bottom: 10px;
+				}
 			}
 		}
-		#createContact{}
+		#createContact {
+			margin: 20px;
+			
+			p {
+				font-size: 24px;
+				font-family: 'hell';
+			}
+			
+			#createContactButton {
+				display: inline-block;
+				width:100px;
+				height: 40px;
+				border: none;
+				color:#fff;
+				background-color: rgba(234, 87, 85, 0.6);
+				padding: 5px 20px;
+				text-decoration: none;
+				line-height: 40px;
+				font-family: 'hell';
+			}
+		}
 	}
 }
