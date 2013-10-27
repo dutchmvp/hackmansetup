@@ -22,25 +22,16 @@ if (is_null($userId)) {
 
 <div id="profileWrapper">
 	<h2>Your Profile</h2>
-	<a href="logout.php">Logout</a>
+	
 	<div id="navigation">
 		<ul>
-			<li class="active">My Profile</li>
-			<li>View Contacts</li>
-			<li>Create Contact</li>
+			<li class="active">Create Contact</li>
+			
 		</ul>
 	</div>
 	<div id="profileContent">
-		<div id="profile" class="content"></div>
-		<div id="contacts" class="content">
-			<?php 
-			   include 'database.php';
-			   $database = new Database();
-			   $database->lookupContacts($_SESSION['userid'])
- 
-			?>
-
-		</div>
+		
+		
 		<div id="createContact" class="content">
 			<h2>Create your contact</h2>
 			<p>enter all your contacts information for a bigger chance to bug them</p>

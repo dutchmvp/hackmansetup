@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="css/base.css" />
 </head>
 <body>
-<header></header>
+<header>
+	
+
+</header>
 <div id="wrapper">
 	<a href="index.php"><img src="img/logo.png" id="logo"/></a>

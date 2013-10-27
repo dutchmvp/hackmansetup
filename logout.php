@@ -1,6 +1,6 @@
 <?php
 session_start();
-unset($_SESSION["loggedIn"]);
+unset($_SESSION["userid"]);
 header("Location: index.php");
 
 ?>
