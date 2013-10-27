@@ -1,6 +1,6 @@
 
 <?php include 'header.php'; ?>
-<?php include 'register.php'; ?>
+<?php include 'loginPage.php'; ?>
 <?php include 'footer.php'; ?>
 
 

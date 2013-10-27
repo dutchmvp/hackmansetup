@@ -2,6 +2,7 @@ var tfuNotificationSystem = {
 	init:function(){
       tfuNotificationSystem.tabNavigation();
       tfuNotificationSystem.clickHandlers();
+      $(window).konami(function(){ alert('NMC Code Activated!')});
 	},
 	clickHandlers:function(){
       $('#createContactButton').click(function(){
@@ -24,11 +25,11 @@ var tfuNotificationSystem = {
       var user = $('#user').val();
       var twitter = $('#twitter').val();
       var data = 'userId='+user+'&name='+name+'&number='+number+'&email='+email+'&twitter='+twitter
-      alert(data);
       $.ajax({
       	url:'/hackmansetup/addContact.php?'+data,
       	data: data,
-      	type:'post',
+      	type:'POST',
+      	dataType:'json',
       	success:function(data){
            alert(data);
       	},
@@ -41,4 +42,5 @@ var tfuNotificationSystem = {
 
 $('document').ready(function(){
    tfuNotificationSystem.init();
+
 });
