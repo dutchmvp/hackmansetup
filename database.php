@@ -1,5 +1,4 @@
 <?php
-
 $dbHost = "109.109.137.143";
 $dbUser = "root";
 $dbPass = "uA8GTi23xD";
@@ -8,6 +7,18 @@ $db = mysql_connect($dbHost,$dbUser,$dbPass)or die("Error connecting to database
 mysql_select_db($dbDatabase, $db)or die("Couldn't select the database."); 
 
 class Database {
+
+  public function lookupUser($email) {
+    $userRow = NULL;
+    $connection = mysqli_connect($dbHost, $dbUser, $dbPass, $dbDatabase);
+    $results = mysqli_query($connection, "SELECT * FROM Users WHERE Email = '$email'");
+    while ($row = mysqli_fetch_array($results)) {
+      $userRow = $row;
+      break;
+    }
+    mysqli_close($connection);
+    return $userRow;
+  }
 
   public function lookupPhoneNumber($phoneNumber) {
     $userRow = NULL;
@@ -55,6 +66,4 @@ class Database {
     mysqli_close($connection);
   }
 }
-
-?>
 ?>
