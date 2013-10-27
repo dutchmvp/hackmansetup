@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['userid'] && $_SESSION['userid'] != '')) {
+if (!is_null($_SESSION['userid'])) {
 	header ("Location: profile.php");
 }
 ?>
