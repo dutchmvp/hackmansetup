@@ -1,7 +1,7 @@
 <?PHP
 session_start();
-if (!(isset($_SESSION['userid']) && $_SESSION['userid'] != '')) {
-header ("Location: index.php");
+if (isset($_SESSION['userid'] && $_SESSION['userid'] != '')) {
+	header ("Location: profile.php");
 }
 
 ?>
@@ -9,5 +9,3 @@ header ("Location: index.php");
 <a href="register.php">Register</a>
 <a href="loginPage.php">Login</a>
 <?php include 'footer.php'; ?>
-
-
