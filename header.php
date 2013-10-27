@@ -12,3 +12,4 @@
 <body>
 <header></header>
 <div id="wrapper">
+	<a href="index.php"><img src="img/logo.png" id="logo"/></a>

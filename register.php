@@ -1,9 +1,9 @@
 <?php include 'header.php'; ?>
 <div id="registerWrapper">
 
-	<h1 class="sprite" id="logo"></h1>
+	
 
-	<h2>Hello you how are you</h2>
+	<h2>Fill in your details below</h2>
 	
 	<form method="post" action="signup.php">
 		
@@ -13,7 +13,7 @@
 		<input type="email" placeholder="Email Address" name="email" class="textInput"/>
 		<input type="password" placeholder="Password" name="password" class="textInput"/>
 		<span class="rightShift">
-			<input type="submit" value="Notify!">
+			<input type="submit" value="Register">
 		</span>
 	
 	</form>

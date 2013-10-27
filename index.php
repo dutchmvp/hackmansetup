@@ -9,6 +9,9 @@ if (isset($_SESSION['userid'])) {
 ?>
 
 <?php include 'header.php'; ?>
-<a href="register.php">Register</a>
-<a href="loginPage.php">Login</a>
+
+
+<p></p>
+<a href="register.php" class="homeLink" id="registerUserButton"><img src="img/register.png" /></a>
+<a href="loginPage.php" class="homeLink" id="loginButton"><img src="img/login.png" /></a>
 <?php include 'footer.php'; ?>

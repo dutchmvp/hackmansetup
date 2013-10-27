@@ -37,9 +37,7 @@ if (is_null($userId)) {
 			   include 'database.php';
 			   $database = new Database();
 			   $database->lookupContacts($_SESSION['userid'])
-			   
-
-			  
+ 
 			?>
 
 		</div>

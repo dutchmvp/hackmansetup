@@ -7,7 +7,7 @@
 		
 		</div>
 		
-		<h2>
+		<h2>Login</h2>
 		
 		<input type="email" placeholder="Email Address" name="email"/>
 		<input type="password" placeholder="Password" name="password"/>
