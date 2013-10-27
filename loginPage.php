@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <div id="registerWrapper">
 	
 	<form method="post" action="login.php">
@@ -8,3 +9,4 @@
 	</form>
 
 </div>
+<?php include 'footer.php'; ?>

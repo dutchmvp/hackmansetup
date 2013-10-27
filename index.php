@@ -1,6 +1,7 @@
 
 <?php include 'header.php'; ?>
-<?php include 'register.php'; ?>
+<a href="register.php">Register</a>
+<a href="loginPage.php">Login</a>
 <?php include 'footer.php'; ?>
 
 

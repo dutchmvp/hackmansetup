@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <div id="registerWrapper">
 
 	<h1 class="sprite" id="logo"></h1>
@@ -16,3 +17,4 @@
 	</form>
 
 </div>
+<?php include 'footer.php'; ?>

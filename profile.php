@@ -1,9 +1,16 @@
+<?PHP
+session_start();
+if (!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] != '')) {
+header ("Location: index.php");
+}
 
+?>
 <?php include 'header.php'; ?>
 
 
 <div id="profileWrapper">
 	<h2>Your Profile</h2>
+	<a href="logout.php">Logout</a>
 	<div id="navigation">
 		<ul>
 			<li class="active">My Profile</li>
@@ -17,7 +24,7 @@
 			<?php 
 			   include 'database.php';
 
-			   $user = '4';
+			   $user = $_SESSION['userid'];
 			   $query="SELECT * FROM Contacts WHERE UserId = $user";
 			   $results = mysql_query($query);
 
@@ -34,23 +41,29 @@
 		<div id="createContact" class="content">
 			<h2>Create your contact</h2>
 			<p>enter all your contacts information for a bigger chance to bug them</p>
-			<input type="hidden" id="user" value="4"/>
+			<input type="hidden" id="user" name="userId" value="4"/>
 			<div id="" class="contactElem">
 				<span class="icon"></span>
                 <div class="inputHolder">
-                	<input type="text"placeholder="@Name" id="name" />
+                	<input type="text"placeholder="@Name" name="name" id="name" />
                 </div>
 			</div>
 			<div id="" class="contactElem">
 				<span class="icon"></span>
                 <div class="inputHolder">
-                	<input type="text"placeholder="Number" id="number" />
+                	<input type="text"placeholder="Number" name="number" id="number" />
                 </div>
 			</div>
 			<div id="" class="contactElem">
 				<span class="icon"></span>
                 <div class="inputHolder">
-                	<input type="text"placeholder="Email" id="email" />
+                	<input type="text"placeholder="Email" name="email" id="email" />
+                </div>
+			</div>
+			<div id="" class="contactElem">
+				<span class="icon"></span>
+                <div class="inputHolder">
+                	<input type="text"placeholder="Twitter" name="twitter" id="twitter" />
                 </div>
 			</div>
 			<a href="#" id="createContactButton">Create Contact</a>

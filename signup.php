@@ -1,11 +1,24 @@
-
 <?php 
 
     include 'database.php';
+    $database = new Database();
+
+    $email = $_POST["email"];
+
+    if ($database->isUserEmailAvailable($email)) {
+        $nickname = $_POST['nickname'];
+        $phoneNumber = $_POST['phone'];
+        $password = $_POST['password'];
+        $database->createUser($nickname, $phoneNumber, $email, $password);
+        header("Location: profile.php"); 
+    }
+    else {
+    }
+/*
     # search the database to see if the email has been taken or not 
-    $query = sprintf("SELECT * FROM Users WHERE Email='%s' LIMIT 1",mysql_real_escape_string($_POST['email'])); 
-    $sql = mysql_query($query); 
-    $row = mysql_fetch_array($sql); 
+    $query = sprintf($db,"SELECT * FROM Users WHERE Email='%s' LIMIT 1",mysql_real_escape_string($_POST['email'])); 
+    $sql = mysqli_query($query); 
+    $row = mysqli_fetch_array($sql); 
    
     # set vars
     $nickname = $_POST['nickname'];
@@ -14,9 +27,11 @@
     $Password = $_POST['password'];
 
     #add to db
-    mysqli_query($con,"INSERT INTO Users (Nickname,PhoneNumber, Email, Password) VALUES ('$nickname', '$PhoneNumber', '$Email', '$Password')");
-    $sql = mysql_query($query); 
+    mysqli_query($db,"INSERT INTO Users (Nickname,PhoneNumber, Email, Password) VALUES ('$nickname', '$PhoneNumber', '$Email', '$Password')");
+    $sql = mysqli_query($query); 
     # Redirect the user to a login page 
-    header("Location: logedIn.php"); 
+    header("Location: profile.php"); 
     exit; 
-?> 
+*/
+
+?>
