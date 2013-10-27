@@ -11,8 +11,17 @@
 </head>
 <body>
 <header>
-	
-
+	<div id="headerContent">
+	<?php 
+       session_start();
+       if (isset($_SESSION['userid'])) {
+	      $userId = $_SESSION['userid'];
+	      if (!is_null($userId)) {
+		     echo "<a href='logout.php' id='logout'>Logout</a>";
+	      }
+	   }
+	?>
+	</div>
 </header>
 <div id="wrapper">
 	<a href="index.php"><img src="img/logo.png" id="logo"/></a>

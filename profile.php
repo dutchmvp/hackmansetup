@@ -20,21 +20,19 @@ if (is_null($userId)) {
 <?php include 'header.php'; ?>
 
 
-<div id="profileWrapper">
-	<h2>Your Profile</h2>
-	
+<div id="profileWrapper">	
 	<div id="navigation">
 		<ul>
-			<li class="active">Create Contact</li>
+			<li class="active"></li>
 			
 		</ul>
 	</div>
 	<div id="profileContent">
-		
+		<span id="arrow"><img src="img/arrow.png"/></span>
 		
 		<div id="createContact" class="content">
 			<h2>Create your contact</h2>
-			<p>enter all your contacts information for a bigger chance to bug them</p>
+			<p>enter all your contacts information for a bigger chance to 'contact' them</p>
 			<input type="hidden" id="user" name="userId" value="<?php echo $_SESSION['userid']; ?>"/>
 			<div id="" class="contactElem">
 				<span class="icon"></span>
