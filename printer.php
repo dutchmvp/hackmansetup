@@ -12,6 +12,7 @@ while($row = mysqli_fetch_array($result))
   {
   echo $row['Nickname'] . " " . $row['MessageText'];
   echo "<br>";
+  
   }
 
 mysqli_close($con);
