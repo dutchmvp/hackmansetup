@@ -23,25 +23,18 @@ header ("Location: index.php");
 		<div id="contacts" class="content">
 			<?php 
 			   include 'database.php';
+			   $database = new Database();
+			   $database->lookupContacts($_SESSION['userid'])
+			   
 
-			   $user = $_SESSION['userid'];
-			   $query="SELECT * FROM Contacts WHERE UserId = $user";
-			   $results = mysql_query($query);
-
-			   while ($row = mysql_fetch_assoc($results)) {
-			   	echo '<tr>';
-			  	echo '<td>'.$row['Handle'].'</td>';
-			  	echo '<td>'.$row['EmailAddress'].'</td>';
-			  	echo '</tr>';
-				}
-
+			  
 			?>
 
 		</div>
 		<div id="createContact" class="content">
 			<h2>Create your contact</h2>
 			<p>enter all your contacts information for a bigger chance to bug them</p>
-			<input type="hidden" id="user" name="userId" value="4"/>
+			<input type="hidden" id="user" name="userId" value="<?php echo $_SESSION['userid']; ?>"/>
 			<div id="" class="contactElem">
 				<span class="icon"></span>
                 <div class="inputHolder">

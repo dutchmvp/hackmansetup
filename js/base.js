@@ -20,20 +20,22 @@ var tfuNotificationSystem = {
 	createContact:function(){
       var number = $('#number').val();
       var email = $('#email').val();
-      var name = $('#name').val();
+      var name = '@'+$('#name').val();
       var user = $('#user').val();
       var twitter = $('#twitter').val();
       var data = 'userId='+user+'&name='+name+'&number='+number+'&email='+email+'&twitter='+twitter
-      alert(data);
       $.ajax({
-      	url:'/hackmansetup/addContact.php?'+data,
-      	data: data,
+      	url:'/hackmansetup/addContact.php?',
+         data:data,
       	type:'post',
       	success:function(data){
-           alert(data);
+           $('.inputHolder input').val('');
+           $('#createContactButton').after('Contact Created');
+
       	},
       	error:function(){
-      		alert('<fail></fail>');
+      		 $('.inputHolder input').val('');
+           $('#createContactButton').after('Unable to create contact');
       	}
       });
 	}

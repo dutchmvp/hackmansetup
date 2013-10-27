@@ -53,6 +53,21 @@ class Database {
                 mysqli_close($connection);
                 return $contactRow;
         }
+        public function lookupContacts($userId) {
+                $contactRow = NULL;
+                $connection = mysqli_connect(self::DATABASE_HOST, self::DATABASE_USERNAME, self::DATABASE_PASSWORD, self::DATABASE_NAME);
+                  $results = mysqli_query($connection, "SELECT * FROM Contacts WHERE UserID = '$userId'");
+                while ($row = mysqli_fetch_array($results)) {
+                    echo '<tr>';
+                    echo '<td>'.$row['Handle'].'</td>';
+                    echo '<td>'.$row['EmailAddress'].'</td>';
+                    echo '<td>'.$row['twitter'].'</td>';
+                    echo '<td>'.$row['phone'].'</td>';
+                    echo '</tr>';
+                }
+                mysqli_close($connection);
+                //return $contactRow;
+        }
 
         public function isUserEmailAvailable($email) {
                 $result = true;
@@ -120,7 +135,7 @@ class Database {
                     "INSERT INTO Contacts " .
                     "(UserID, Handle, EmailAddress, phone, twitter) " .
                     "VALUES " .
-                    "('$user', '$name', '$email', '$number','twitter')");
+                    "('$user', '$name', '$email', '$number','$twitter')");
             
                 mysqli_close($connection);
         }
