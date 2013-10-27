@@ -78,13 +78,7 @@ h2 {
   width: 370px;
   margin: 120px auto;
 }
-/* line 5, ../sass/register.scss */
-#registerWrapper .rightShift {
-  display: inline-block;
-  width: 100%;
-  text-align: right;
-}
-/* line 11, ../sass/register.scss */
+/* line 7, ../sass/register.scss */
 #registerWrapper input[type="text"], #registerWrapper input[type="email"], #registerWrapper input[type="password"] {
   float: left;
   width: 350px;
@@ -93,14 +87,22 @@ h2 {
   background-color: rgba(61, 121, 151, 0.6);
   border: none;
   padding: 5px 10px;
+  font-size: 16px;
 }
-/* line 20, ../sass/register.scss */
+/* line 17, ../sass/register.scss */
 #registerWrapper input[type="submit"] {
   width: 100px;
   height: 40px;
   border: none;
   background-color: rgba(234, 87, 85, 0.6);
   margin: 10px 0 50px 120px;
+}
+
+/* line 27, ../sass/register.scss */
+.rightShift {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
 }
 
 /* line 1, ../sass/profile.scss */
