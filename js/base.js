@@ -23,7 +23,8 @@ var tfuNotificationSystem = {
       var name = '@'+$('#name').val();
       var user = $('#user').val();
       var twitter = $('#twitter').val();
-      var data = 'userId='+user+'&name='+name+'&number='+number+'&email='+email+'&twitter='+twitter
+      var tumblr = $('#tumblr').val();
+      var data = 'userId='+user+'&name='+name+'&number='+number+'&email='+email+'&twitter='+twitter+'&tumblr'+tumblr
       $.ajax({
       	url:'/hackmansetup/addContact.php?',
          data:data,

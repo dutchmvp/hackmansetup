@@ -60,6 +60,12 @@ if (is_null($userId)) {
                 	<input type="text"placeholder="Twitter" name="twitter" id="twitter" />
                 </div>
 			</div>
+			<div id="" class="contactElem">
+				<span class="icon"></span>
+                <div class="inputHolder">
+                	<input type="text"placeholder="tumblr" name="tumblr" id="tumblr" />
+                </div>
+			</div>
 			<a href="#" id="createContactButton">Create Contact</a>
 		</div>
 	</div>
